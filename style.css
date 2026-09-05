@@ -239,3 +239,250 @@ footer{padding:24px 6vw;border-top:1px solid #222;display:flex;justify-content:s
     letter-spacing:.8px;
   }
 }
+
+
+/* =========================================================
+   MOBILE V4 — Hajdú Gym
+   Telefonra optimalizált teljes oldal
+   ========================================================= */
+
+@media (max-width: 900px){
+
+  html,body{overflow-x:hidden}
+  body{font-size:16px}
+
+  /* Fejléc */
+  .nav{
+    height:68px !important;
+    padding:7px 14px !important;
+    background:rgba(5,5,5,.97) !important;
+  }
+  .brand img{width:48px !important;height:48px !important}
+  .menu-toggle{
+    width:44px !important;
+    height:44px !important;
+    flex-basis:44px !important;
+  }
+  .nav nav,.nav nav.open{
+    top:68px !important;
+    height:calc(100dvh - 68px) !important;
+  }
+
+  /* Kezdőoldal hero:
+     a teljes fekvő Hajdú Gym kép külön, jól látható sávban jelenik meg,
+     a szöveg pedig alatta — így mobilon sem tűnik el a háttér. */
+  .hero{
+    min-height:auto !important;
+    display:block !important;
+    padding:0 20px 48px !important;
+    overflow:hidden;
+    background:#080808;
+  }
+  .hero-bg{
+    position:relative !important;
+    inset:auto !important;
+    width:calc(100% + 40px) !important;
+    height:56vw !important;
+    min-height:205px;
+    max-height:370px;
+    margin-left:-20px;
+    background-image:url("assets/hero-hajdu-gym.png") !important;
+    background-size:contain !important;
+    background-position:center top !important;
+    background-repeat:no-repeat !important;
+    background-color:#080808;
+    opacity:1 !important;
+  }
+  .shade{
+    pointer-events:none;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    height:56vw;
+    min-height:205px;
+    max-height:370px;
+    background:linear-gradient(0deg,#080808 0%,rgba(8,8,8,.10) 23%,rgba(8,8,8,0) 58%) !important;
+  }
+  .hero .content{
+    position:relative;
+    max-width:none !important;
+    padding-top:22px;
+    text-align:left;
+  }
+  .hero .eyebrow{
+    font-size:11px;
+    letter-spacing:2.2px;
+  }
+  .hero h1{
+    font-size:clamp(38px,10.8vw,58px) !important;
+    line-height:1.00 !important;
+    margin:10px 0 18px !important;
+  }
+  .hero .lead{
+    max-width:none;
+    font-size:16px !important;
+    line-height:1.55 !important;
+    color:#d6d6d6;
+  }
+  .hero .actions{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    gap:10px !important;
+    width:100%;
+    max-width:none !important;
+    margin-top:24px;
+  }
+  .hero .actions a{
+    width:100%;
+    text-align:center;
+    padding:15px 16px;
+  }
+
+  /* Aloldalak fejléce */
+  .pagehead{
+    padding:56px 20px 42px !important;
+  }
+  .pagehead h1{
+    font-size:clamp(38px,11vw,56px) !important;
+    margin-bottom:18px;
+  }
+  .pagehead p{
+    font-size:16px !important;
+    line-height:1.58 !important;
+  }
+
+  /* Szekciók */
+  .section{
+    width:100%;
+    padding:52px 20px !important;
+  }
+  .section h2{
+    font-size:clamp(34px,9vw,48px) !important;
+  }
+  .split,
+  .contactgrid{
+    grid-template-columns:1fr !important;
+    gap:28px !important;
+  }
+  .copy p{
+    font-size:16px !important;
+    line-height:1.62 !important;
+  }
+  .split img{
+    max-height:none;
+    border-radius:0;
+  }
+
+  /* Kártyák */
+  .features{
+    grid-template-columns:1fr !important;
+    gap:12px !important;
+    margin-top:28px;
+  }
+  .card{
+    padding:22px 18px !important;
+  }
+  .card b{font-size:18px}
+  .card p{font-size:15px;line-height:1.55}
+
+  /* Galéria / eredmények */
+  .gallery{
+    grid-template-columns:1fr !important;
+    gap:16px !important;
+  }
+  .gallery figure{
+    border:1px solid #202020;
+  }
+  .gallery img{
+    width:100%;
+    aspect-ratio:auto !important;
+    max-height:none !important;
+    object-fit:contain !important;
+    background:#0b0b0b;
+  }
+  .gallery figcaption{
+    padding:14px 16px;
+    font-size:14px;
+    line-height:1.4;
+  }
+
+  /* Becsületkassza */
+  .honor{
+    margin-top:24px;
+    padding:24px 18px !important;
+    border-left-width:4px;
+  }
+  .honor p{
+    font-size:16px !important;
+    line-height:1.6 !important;
+  }
+
+  /* Kapcsolat */
+  .contactgrid>img{
+    width:min(78vw,360px) !important;
+    margin:0 auto;
+  }
+  .contactbox{
+    padding:24px 18px !important;
+  }
+  .contactbox p{
+    font-size:16px;
+    line-height:1.58;
+    overflow-wrap:anywhere;
+  }
+  .contactbox .btn,
+  .contactbox .ghost{
+    width:100%;
+    text-align:center;
+    margin-top:8px;
+  }
+
+  /* Gombok */
+  .btn,.ghost{
+    min-height:48px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  /* Footer */
+  footer{
+    padding:22px 20px !important;
+    flex-direction:column !important;
+    gap:9px !important;
+    line-height:1.5;
+    text-align:center;
+  }
+  .site-credit{
+    padding:14px 16px 18px !important;
+    line-height:1.65;
+  }
+}
+
+@media (max-width: 520px){
+  .hero-bg,
+  .shade{
+    height:58vw !important;
+    min-height:195px;
+  }
+  .hero{
+    padding-left:16px !important;
+    padding-right:16px !important;
+  }
+  .hero-bg{
+    width:calc(100% + 32px) !important;
+    margin-left:-16px !important;
+  }
+  .hero h1{
+    font-size:clamp(36px,11vw,50px) !important;
+  }
+  .hero .lead{font-size:15.5px !important}
+  .pagehead,.section{
+    padding-left:18px !important;
+    padding-right:18px !important;
+  }
+  .nav nav,.nav nav.open{
+    width:92vw !important;
+  }
+}
