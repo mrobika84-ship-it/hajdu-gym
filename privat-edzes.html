@@ -3,7 +3,8 @@
 <body>
 <header class="nav">
 <a class="brand" href="index.html"><img src="assets/logo.png" alt="Hajdú Gym"><span>HAJDÚ <b>GYM</b></span></a>
-<nav>
+<button class="menu-toggle" type="button" aria-label="Menü megnyitása" aria-expanded="false">☰</button>
+<nav id="mobile-nav">
 <a href="index.html">Kezdőlap</a>
 <a href="privat-edzes.html">Privát edzés</a>
 <a href="rolam.html">Rólam</a>
@@ -19,4 +20,38 @@
 <p>Privát, tiszta és nyugodt környezetben edzünk. Az edzés a jelenlegi állapotodhoz és a célodhoz igazodik.</p>
 <div class="features"><div class="card"><b>Privát edzés</b><p>Nem kell idegenek előtt edzened.</p></div><div class="card"><b>Személyre szabva</b><p>Onnan indulunk, ahol most tartasz.</p></div><div class="card"><b>Minden korban</b><p>A kor nem akadály. A fokozatosság számít.</p></div><div class="card"><b>Tiszta környezet</b><p>Nyugodt, rendezett edzőhely Kispesten.</p></div></div>
 <div class="actions"><a class="btn" href="kapcsolat.html">Szeretném elkezdeni</a></div></div><img src="assets/training.jpg" alt="Edzés a Hajdú Gymben"></div></section>
-</main><footer><span>© 2026 Hajdú Gym · Kispest</span><a href="tel:+36209463418">+36 20 946 3418</a></footer></body></html>
+</main><footer><span>© 2026 Hajdú Gym · Kispest</span><a href="tel:+36209463418">+36 20 946 3418</a></footer>
+<script>
+(function () {
+  const button = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('nav');
+  if (!button || !nav) return;
+
+  button.addEventListener('click', function () {
+    const open = nav.classList.toggle('open');
+    button.classList.toggle('open', open);
+    button.setAttribute('aria-expanded', open ? 'true' : 'false');
+    button.textContent = open ? '✕' : '☰';
+  });
+
+  nav.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', function () {
+      nav.classList.remove('open');
+      button.classList.remove('open');
+      button.setAttribute('aria-expanded', 'false');
+      button.textContent = '☰';
+    });
+  });
+
+  document.addEventListener('click', function (e) {
+    if (!nav.contains(e.target) && !button.contains(e.target)) {
+      nav.classList.remove('open');
+      button.classList.remove('open');
+      button.setAttribute('aria-expanded', 'false');
+      button.textContent = '☰';
+    }
+  });
+})();
+</script>
+
+</body></html>
